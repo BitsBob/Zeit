@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zeit"
         tools:targetApi="31">
+        <activity android:name=".PomodoroActivity" />
 
         <activity
             android:name=".MainActivity"

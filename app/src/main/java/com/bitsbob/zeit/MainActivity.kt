@@ -1,14 +1,11 @@
 package com.bitsbob.zeit
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Button
+import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,11 +19,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
 
-        val settingsButton = findViewById<MaterialButton>(R.id.settingsButton)
-        settingsButton.setOnClickListener {
-            showSettingsBottomSheet()
-        }
         val timerText = findViewById<TextView>(R.id.timerText)
+        val resetBtn = findViewById<MaterialButton>(R.id.resetBtn)
+        val layout = findViewById<View>(R.id.root_layout)
+        layout.isClickable = true
+        layout.isFocusable = true
+
+        layout.setOnTouchListener(
+            SwipeGestureListener(
+                this,
+                onSwipeRight = {
+                    val intent = Intent(this, PomodoroActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right) },
+            )
+        )
+
 
         timerText.setOnClickListener {
             if (isTiming) {
@@ -35,25 +43,13 @@ class MainActivity : AppCompatActivity() {
                 startStopwatch(timerText)
             }
         }
-    }
 
-    private fun showSettingsBottomSheet() {
-        val dialog = BottomSheetDialog(this)
-        val view = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_settings, null)
-
-        val switch = view.findViewById<SwitchMaterial>(R.id.darkModeSwitch)
-        val closeBtn = view.findViewById<Button>(R.id.closeButton)
-
-        switch.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(this, "Dark Mode: $isChecked", Toast.LENGTH_SHORT).show()
+        resetBtn.setOnClickListener {
+            if (!isTiming) {
+                elapsed = 0
+                timerText.text = formatTime(elapsed)
+            }
         }
-
-        closeBtn.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        dialog.setContentView(view)
-        dialog.show()
     }
 
     private fun formatTime(seconds: Int): String {

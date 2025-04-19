@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
@@ -20,23 +21,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="@color/colorPrimaryVariant" />
+        app:layout_constraintTop_toTopOf="parent"       app:rippleColor="@color/colorPrimaryVariant" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/settingsButton"
+        android:id="@+id/resetBtn"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@string/settings_button_description"
-        app:cornerRadius="16dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconSize="30dp"
-        app:iconTint="@color/colorOnSurface"
+        android:layout_marginTop="500dp"
+        android:textSize="90sp"
         app:backgroundTint="@color/colorSurface"
-        app:rippleColor="@color/colorPrimaryVariant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:cornerRadius="16dp"
+        app:iconPadding="0dp"
+        app:iconGravity="textStart"
+        app:icon="@drawable/baseline_refresh_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/colorPrimaryVariant"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
