@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:label="@string/Zeit"
     android:background="@color/colorBackground"
     android:theme="@style/Theme.Zeit">
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/timerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="348dp"
+        android:text="@string/timer_deafault_text"
         android:textColor="@color/colorTextPrimary"
-        android:text="00:00"
         android:textSize="90sp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:backgroundTint="@color/colorSurface"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/colorPrimaryVariant" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settingsButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/settings_button_description"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/baseline_settings_24"
+        app:iconSize="30dp"
+        app:iconTint="@color/colorOnSurface"
+        app:backgroundTint="@color/colorSurface"
+        app:rippleColor="@color/colorPrimaryVariant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

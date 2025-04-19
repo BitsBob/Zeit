@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#121212</color>
-    <color name="colorPrimaryVariant">#1E1E1E</color>
-    <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorSecondary">#03DAC5</color>
-    <color name="colorSecondaryVariant">#018786</color>
-    <color name="colorOnSecondary">#000000</color>
-    <color name="colorOnBackground">#FFFFFF</color>
-    <color name="colorBackground">#1D0921</color>
-    <color name="colorSurface">#1E1E1E</color>
-    <color name="colorOnSurface">#FFFFFF</color>
-    <color name="colorTextPrimary">#FFFFFF</color>
-    <color name="colorTextSecondary">#B0B0B0</color>
-    <color name="colorError">#D32F2F</color>
-    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorPrimary">#212121</color>         <!-- Dark Gray (Primary Brand) -->
+    <color name="colorPrimaryVariant">#424242</color>  <!-- Medium-Dark Gray -->
+    <color name="colorOnPrimary">#FFFFFF</color>       <!-- White (Text/Icons on Primary) -->
+    <color name="colorSecondary">#757575</color>       <!-- Medium Gray (Secondary Brand) -->
+    <color name="colorSecondaryVariant">#616161</color><!-- Dark-Medium Gray -->
+    <color name="colorOnSecondary">#FFFFFF</color>     <!-- White (Text/Icons on Secondary) -->
+    <color name="colorBackground">#121212</color>      <!-- Deep Black (Background) -->
+    <color name="colorOnBackground">#FFFFFF</color>    <!-- White (Primary Text) -->
+    <color name="colorSurface">#1E1E1E</color>         <!-- Surface Gray (Cards/Dialogs) -->
+    <color name="colorOnSurface">#FFFFFF</color>       <!-- White (Surface Text) -->
+    <color name="colorTextPrimary">#FFFFFF</color>     <!-- Primary Text -->
+    <color name="colorTextSecondary">#BDBDBD</color>   <!-- Secondary Text (60% Opacity) -->
+    <color name="colorError">#424242</color>           <!-- Error State Gray -->
+    <color name="colorOnError">#FFFFFF</color>         <!-- Error Text -->
 
 </resources>
 
