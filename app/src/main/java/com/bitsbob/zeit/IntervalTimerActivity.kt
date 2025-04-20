@@ -2,23 +2,31 @@ package com.bitsbob.zeit
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.bitsbob.zeit.databinding.PomodoroBinding
+import com.bitsbob.zeit.databinding.IntervalTimerBinding
 
-class PomodoroActivity : AppCompatActivity() {
+class IntervalTimerActivity : AppCompatActivity() {
 
-    private lateinit var binding: PomodoroBinding
+    private lateinit var binding: IntervalTimerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = PomodoroBinding.inflate(layoutInflater)
+        binding = IntervalTimerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
 
         val layout = findViewById<View>(R.id.root_layout)
+        val timerText = findViewById<TextView>(R.id.timerText)
+
         layout.isClickable = true
         layout.isFocusable = true
+
+        timerText.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+        }
 
         layout.setOnTouchListener(
             SwipeGestureListener(

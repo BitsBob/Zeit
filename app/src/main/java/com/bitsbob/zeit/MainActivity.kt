@@ -1,9 +1,12 @@
 package com.bitsbob.zeit
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import android.view.View
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import java.util.Locale
@@ -15,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private var runnable: Runnable? = null
     private var isTiming = false
 
+    @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             SwipeGestureListener(
                 this,
                 onSwipeRight = {
-                    val intent = Intent(this, PomodoroActivity::class.java)
+                    val intent = Intent(this, IntervalTimerActivity::class.java)
                     startActivity(intent)
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right) },
             )
@@ -38,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
 
         timerText.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
             if (isTiming) {
                 stopStopwatch()
             } else {
@@ -46,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         resetBtn.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
             if (!isTiming) {
                 elapsed = 0
                 timerText.text = formatTime(elapsed)
