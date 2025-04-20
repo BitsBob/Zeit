@@ -1,27 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:background="@color/colorBackground"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_layout"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/firacode"
+        android:text="@string/interval_timer_label"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/timerText"
+        app:layout_constraintStart_toStartOf="@+id/timerText" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/firacode"
+        android:text="@string/interval_timer_label_rest"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/restText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/restText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="516dp"
+        android:width="325dp"
+        android:fontFamily="@font/firacode"
+        android:text="@string/timer_deafault_text"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="80sp"
+        app:backgroundTint="@color/colorSurface"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/colorPrimaryVariant" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/timerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginBottom="426dp"
+        android:width="325dp"
+        android:fontFamily="@font/firacode"
         android:text="@string/timer_deafault_text"
         android:textColor="@color/colorTextPrimary"
-        android:textSize="90sp"
+        android:textSize="80sp"
         app:backgroundTint="@color/colorSurface"
         app:cornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/settingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="@color/colorPrimaryVariant" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settingsBtn"
+        android:layout_width="48dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        app:iconPadding="0dp"
+        app:iconGravity="textStart"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/baseline_settings_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

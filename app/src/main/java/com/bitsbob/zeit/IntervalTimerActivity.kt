@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bitsbob.zeit.databinding.IntervalTimerBinding
+import com.google.android.material.button.MaterialButton
 
 class IntervalTimerActivity : AppCompatActivity() {
 
@@ -20,9 +21,14 @@ class IntervalTimerActivity : AppCompatActivity() {
 
         val layout = findViewById<View>(R.id.root_layout)
         val timerText = findViewById<TextView>(R.id.timerText)
+        val settingsBtn = findViewById<MaterialButton>(R.id.settingsBtn)
 
         layout.isClickable = true
         layout.isFocusable = true
+
+        settingsBtn.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+        }
 
         timerText.setOnClickListener {
             it.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)

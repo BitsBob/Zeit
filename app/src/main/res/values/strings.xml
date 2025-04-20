@@ -7,4 +7,6 @@
     <string name="tglOneLabel">Useless</string>
     <string name="settingsLabel">Settings</string>
     <string name="reset_button">Reset Button</string>
+    <string name="interval_timer_label">Work</string>
+    <string name="interval_timer_label_rest">Rest</string>
 </resources>
