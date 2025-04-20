@@ -6,12 +6,20 @@
     android:id="@+id/root_layout"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/timerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yay it works"
+        android:layout_marginTop="348dp"
+        android:text="@string/timer_deafault_text"
         android:textColor="@color/colorTextPrimary"
+        android:textSize="90sp"
+        app:backgroundTint="@color/colorSurface"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/colorPrimaryVariant" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

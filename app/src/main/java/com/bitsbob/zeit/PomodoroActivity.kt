@@ -23,10 +23,10 @@ class PomodoroActivity : AppCompatActivity() {
         layout.setOnTouchListener(
             SwipeGestureListener(
                 this,
-                onSwipeRight = {
+                onSwipeLeft = {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right) },
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left) },
             )
         )
     }

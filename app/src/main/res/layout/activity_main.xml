@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"       app:rippleColor="@color/colorPrimaryVariant" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/colorPrimaryVariant" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resetBtn"
@@ -29,6 +30,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="500dp"
         android:textSize="90sp"
+        android:contentDescription="@string/reset_button"
         app:backgroundTint="@color/colorSurface"
         app:cornerRadius="16dp"
         app:iconPadding="0dp"

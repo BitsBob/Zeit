@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 onSwipeRight = {
                     val intent = Intent(this, PomodoroActivity::class.java)
                     startActivity(intent)
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right) },
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right) },
             )
         )
 
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     private fun formatTime(seconds: Int): String {
         val minutes = seconds / 60
         val remainingSeconds = seconds % 60
-        return String.format("%02d:%02d", minutes, remainingSeconds)
+        return String.format(Locale.UK, "%02d:%02d", minutes, remainingSeconds)
     }
 
 
